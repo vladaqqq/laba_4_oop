@@ -6,7 +6,7 @@ def func(category):
         f'&apikey=pub_626325b62e27448152224bc042cd14e9dc5a7').json()
     res = []
     for news in a['results']:
-        res.append([news['title'], news['link'], news['description']])
+        res.append([news['title'], news['link'], news['description'] if news['description'] else ""])
     return res
 
 
