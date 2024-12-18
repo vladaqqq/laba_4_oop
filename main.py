@@ -25,7 +25,7 @@ async def cmn_button(callback: CallbackQuery):
     res = func(callback.data)
     if len(res) > 5:
         res = res[:3]
-    await callback.message.answer("\n===================================\n".join('\n'.join(i) for i in res))
+    await callback.message.answer("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n".join('\n'.join(i) for i in res))
 
 @dp.message(Command('news'))
 async def cmn_again(message: Message):
@@ -37,6 +37,8 @@ async def set_main_menu():
                    description='Справка по работе бота'),
         BotCommand(command='/news',
                    description='Посмотреть другие новости'),
+        BotCommand(command='/start',
+                   description='Запустить бота'),
     ]
 
     await bot.set_my_commands(main_menu_commands)
